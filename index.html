@@ -11,17 +11,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --true-black: #000000;
-      --glass-bg: rgba(255, 255, 255, 0.03);
-      --glass-border: rgba(255, 255, 255, 0.08);
-      --accent-blue: #007aff;
+      --true-black: #05070c;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.16);
+      --accent-blue: #5eb4ff;
+      --accent-amber: #f8c27a;
       --status-green: #22c55e;
       --status-red: #ef4444;
     }
     body {
       font-family: 'Inter', sans-serif;
-      background-color: var(--true-black);
-      color: #e5e5e5;
+      background:
+        radial-gradient(140% 60% at 20% 20%, rgba(94,180,255,0.12), transparent),
+        radial-gradient(120% 70% at 80% 10%, rgba(248,194,122,0.12), transparent),
+        var(--true-black);
+      color: #f5f7fb;
       overflow-x: hidden;
     }
 
@@ -54,11 +58,12 @@
     .bg-grid {
       position: fixed;
       inset: 0;
-      background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 0);
-      background-size: 40px 40px;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 0);
+      background-size: 32px 32px;
       background-position: center;
       z-index: -1;
       pointer-events: none;
+      opacity: 0.7;
     }
 
     code, pre {
@@ -67,10 +72,10 @@
     
     .liquid-glass {
       background: var(--glass-bg);
-      backdrop-filter: blur(24px) saturate(180%);
-      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      backdrop-filter: blur(28px) saturate(200%);
+      -webkit-backdrop-filter: blur(28px) saturate(200%);
       border: 1px solid var(--glass-border);
-      box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.5);
+      box-shadow: 0 18px 60px 0 rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(94,180,255,0.08);
     }
     
     .inner-highlight {
@@ -83,7 +88,7 @@
       inset: 0;
       border-radius: inherit;
       padding: 1px;
-      background: linear-gradient(to bottom, rgba(255,255,255,0.12), transparent 40%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.22), rgba(94,180,255,0.10) 45%, transparent 70%);
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       mask-composite: exclude;
       pointer-events: none;
@@ -95,9 +100,11 @@
       background: rgba(0, 0, 0, 0.9);
     }
 
-    /* GLOBAL HOVER EFFECT FOR DIMMED TEXT */
+    /* Disable hover brightening; force text to stay white */
     [class*="text-white/"] {
-      transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+      color: #ffffff !important;
+      opacity: 1 !important;
+      transition: none;
     }
     [class*="text-white/"]:hover {
       color: #ffffff !important;
@@ -201,7 +208,7 @@
   }
 }
 </script>
-  <script type="module" crossorigin src="/webblog/assets/index-CFkOAOxT.js"></script>
+  <script type="module" crossorigin src="/webblog/assets/index-BJCsfoMa.js"></script>
 </head>
 <body>
   <div class="bg-grid"></div>
